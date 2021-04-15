@@ -1,3 +1,3 @@
-## URL shortening landing page created with React
+# URL shortening landing page created with React
 
-# URL:
+## URL:
