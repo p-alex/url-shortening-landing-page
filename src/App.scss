@@ -1,0 +1,7 @@
+.app-container {
+  width: var(--desktop-regular-fhd);
+  margin: auto;
+  @media (max-width: 1200px) {
+    width: 90%;
+  }
+}
