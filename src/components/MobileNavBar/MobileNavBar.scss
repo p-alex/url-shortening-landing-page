@@ -13,8 +13,8 @@
     }
     &_dropdown {
       position: absolute;
+      z-index: 100;
       top: 100px;
-      border: solid green 1px;
       background: var(--DarkViolet);
       width: 100%;
       border-radius: 10px;
@@ -31,16 +31,6 @@
           text-decoration: none;
           font-weight: 700;
           font-size: 18px;
-        }
-        .special {
-          background: var(--Cyan);
-          color: white;
-          border-radius: 25px;
-          margin-top: 10px;
-          a {
-            color: white;
-            text-decoration: none;
-          }
         }
       }
       .navMobile-linksContainer:last-of-type {
