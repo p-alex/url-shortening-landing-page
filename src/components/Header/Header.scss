@@ -1,55 +1,63 @@
 .header {
-  display: flex;
-  align-items: center;
-  &_content {
-    width: 60%;
-    p {
-      color: var(--Gray);
-      width: 80%;
-    }
-    a {
-      display: inline-block;
-      background: var(--Cyan);
-      color: white;
-      text-decoration: none;
-      margin-top: 40px;
-      border-radius: 25px;
-      padding: 10px 25px;
-      font-weight: 700;
-    }
-    a:hover {
-      opacity: 0.8;
-    }
-  }
-  &_image {
+  width: 100%;
+  &_container {
     position: relative;
-    width: 40%;
-
-    img {
+    display: flex;
+    align-items: center;
+    width: var(--desktop-regular-fhd);
+    margin: auto;
+    .header_content {
       position: relative;
-    }
-  }
-
-  @media (max-width: 1200px) {
-    flex-direction: column-reverse;
-    justify-content: center;
-    text-align: center;
-    &_content {
-      width: 100%;
-      h1 {
-        font-size: 4rem;
-        line-height: 80px;
-      }
+      width: 60%;
       p {
-        width: 100%;
+        position: relative;
+        color: var(--Gray);
+        width: 80%;
       }
       a {
-        font-size: 1.2rem;
+        display: inline-block;
+        background: var(--Cyan);
+        color: white;
+        text-decoration: none;
+        margin-top: 40px;
+        border-radius: 25px;
+        padding: 10px 25px;
+        font-weight: 700;
+      }
+      a:hover {
+        opacity: 0.8;
       }
     }
-    &_image {
-      width: 100%;
-      margin-bottom: 40px;
+    .header_image {
+      position: relative;
+      width: 40%;
+      img {
+        position: relative;
+      }
+    }
+    @media (max-width: 1200px) {
+      flex-direction: column-reverse;
+      justify-content: center;
+      text-align: center;
+      width: 90%;
+      .header_content {
+        width: 100%;
+        h1 {
+          font-size: 4rem;
+          line-height: 80px;
+        }
+        p {
+          width: 100%;
+        }
+        a {
+          font-size: 1.2rem;
+        }
+      }
+      .header_image {
+        position: relative;
+        width: 100%;
+        margin-bottom: 40px;
+      }
     }
   }
 }

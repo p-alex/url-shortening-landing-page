@@ -1,9 +1,14 @@
 .nav {
   position: relative;
-  display: flex;
-  padding: 50px 0;
-  align-items: center;
-
+  width: 100%;
+  &_container {
+    position: relative;
+    padding: 50px 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    width: var(--desktop-regular-fhd);
+  }
   img {
     margin-right: 20px;
   }
@@ -43,7 +48,7 @@
       }
     }
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     display: none;
   }
 }

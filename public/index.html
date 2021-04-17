@@ -39,7 +39,9 @@
         /* ### Secondary */
         --Red: hsl(0, 87%, 67%);
         /* ### Neutral */
-        --Gray: hsl(0, 0%, 75%);
+        --LightGray: hsl(0, 0%, 91%);
+        --Gray: hsl(0, 0%, 65%);
+        --DarkGray: hsl(0, 0%, 30%);
         --GrayishViolet: hsl(257, 7%, 63%);
         --VeryDarkBlue: hsl(255, 11%, 22%);
         --VeryDarkViolet: hsl(260, 8%, 14%);
@@ -53,6 +55,9 @@
         box-sizing: border-box;
         font-family: "Poppins", sans-serif;
       }
+      body {
+        overflow-x: hidden;
+      }
       ul {
         list-style-type: none;
       }
@@ -61,6 +66,18 @@
         line-height: 90px;
         color: #333;
         letter-spacing: -3px;
+      }
+      a {
+        letter-spacing: 1px;
+      }
+      h2 {
+        font-size: 2.5rem;
+        color: #333;
+        letter-spacing: -1px;
+      }
+      h3 {
+        font-size: 1.5rem;
+        color: #333;
       }
       p {
         color: var(--Gray);
