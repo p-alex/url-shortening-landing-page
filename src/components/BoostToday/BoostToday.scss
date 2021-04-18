@@ -1,0 +1,31 @@
+.boost {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 40px 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--DarkViolet);
+  &_container {
+    width: 100%;
+    text-align: center;
+    @media (max-width: 1200px) {
+      width: 90%;
+      margin: auto;
+    }
+  }
+  h2 {
+    color: white;
+  }
+  a {
+    display: inline-block;
+    background: var(--Cyan);
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-weight: 700;
+  }
+}

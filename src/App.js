@@ -3,6 +3,7 @@ import MobileNavBar from "./components/MobileNavBar/MobileNavBar";
 import Header from "./components/Header/Header";
 import Statistics from "./components/Statistics/Statistics";
 import "./App.scss";
+import BoostToday from "./components/BoostToday/BoostToday";
 function App() {
   return (
     <>
@@ -10,6 +11,7 @@ function App() {
       <MobileNavBar />
       <Header />
       <Statistics />
+      <BoostToday />
     </>
   );
 }
