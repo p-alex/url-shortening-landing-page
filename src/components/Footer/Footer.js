@@ -11,40 +11,40 @@ export default function Footer() {
           <ul>
             <span>Features</span>
             <li>
-              <a href="">Link Shortening</a>
+              <a href="/">Link Shortening</a>
             </li>
             <li>
-              <a href="">Branded Links</a>
+              <a href="/">Branded Links</a>
             </li>
             <li>
-              <a href="">Analytics</a>
+              <a href="/">Analytics</a>
             </li>
           </ul>
           <ul>
             <span>Resources</span>
             <li>
-              <a href="">Blog</a>
+              <a href="/">Blog</a>
             </li>
             <li>
-              <a href="">Developers</a>
+              <a href="/">Developers</a>
             </li>
             <li>
-              <a href="">Support</a>
+              <a href="/">Support</a>
             </li>
           </ul>
           <ul>
             <span>Company</span>
             <li>
-              <a href="">About</a>
+              <a href="/">About</a>
             </li>
             <li>
-              <a href="">Out Team</a>
+              <a href="/">Out Team</a>
             </li>
             <li>
-              <a href="">Careers</a>
+              <a href="/">Careers</a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <a href="/">Contact</a>
             </li>
           </ul>
         </div>

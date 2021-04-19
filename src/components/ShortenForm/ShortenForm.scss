@@ -1,0 +1,136 @@
+.shorten {
+  position: relative;
+  width: 100%;
+  top: -140px;
+  &_form {
+    position: relative;
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--DarkViolet);
+    .error {
+      position: absolute;
+      bottom: 12px;
+      color: red;
+    }
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
+    input {
+      position: relative;
+      padding: 15px 25px;
+      width: 82%;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      border: solid transparent 3px;
+      &:focus {
+        border: solid var(--Cyan) 3px;
+      }
+      @media (max-width: 1200px) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+    button {
+      display: block;
+      background: var(--Cyan);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 15px 25px;
+      font-weight: 700;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 18px;
+      width: 15%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @media (max-width: 1200px) {
+        width: 100%;
+      }
+    }
+    .inputError {
+      border: solid red 3px;
+    }
+  }
+  &_formContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
+  }
+}
+.shortenLink_result {
+  position: relative;
+  border-radius: 10px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 18px;
+  animation: ease-in-out 300ms opacity;
+
+  button {
+    display: block;
+    background: var(--Cyan);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    @media (max-width: 1200px) {
+      width: 100%;
+    }
+  }
+  .copied {
+    background: var(--DarkViolet);
+  }
+
+  span {
+    width: 65%;
+    @media (max-width: 1200px) {
+      width: 100%;
+    }
+  }
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    span {
+      border-bottom: solid 1px var(--LightGray);
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  p {
+    position: relative;
+    color: var(--Cyan);
+    width: 200px;
+    text-align: right;
+    @media (max-width: 1200px) {
+      text-align: left;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}

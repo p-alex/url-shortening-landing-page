@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
+import ShortenForm from "../ShortenForm/ShortenForm";
 import "./Statistics.scss";
 export default function Statistics() {
-  const [cardsArray, setCardsArray] = useState([
+  const cardsArray = [
     {
       title: "Brand Recognition",
       details:
@@ -20,10 +21,11 @@ export default function Statistics() {
         "Improve brand awareness and content discoverabillity through customizable links, supercharging audience engagement.",
       icon: "/images/icon-fully-customizable.svg",
     },
-  ]);
+  ];
   return (
     <section className="statistics">
       <div className="statistics_container">
+        <ShortenForm />
         <div className="statistics_header">
           <h2>Advanced Statistics</h2>
           <p>
