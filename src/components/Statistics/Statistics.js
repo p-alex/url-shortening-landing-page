@@ -1,5 +1,5 @@
 import React from "react";
-import ShortenForm from "../ShortenForm/ShortenForm";
+import ShortenFormContainer from "../../containers/ShortenFormContainer/ShortenFormContainer";
 import "./Statistics.scss";
 export default function Statistics() {
   const cardsArray = [
@@ -25,7 +25,7 @@ export default function Statistics() {
   return (
     <section className="statistics">
       <div className="statistics_container">
-        <ShortenForm />
+        <ShortenFormContainer />
         <div className="statistics_header">
           <h2>Advanced Statistics</h2>
           <p>

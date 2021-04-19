@@ -1,55 +1,16 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Loader from "../../ui/Loader/Loader";
 import "./ShortenForm.scss";
-export default function ShortenForm() {
-  const [link, setLink] = useState("");
-  const [shortenLinks, setShortenLinks] = useState([
-    { longLink: "asdasdas", shortLink: "asdsad", isCopid: false },
-  ]);
-  const [errors, setErrors] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!link) return setErrors([{ message: "Please add a link" }]);
-    setErrors([]);
-    setIsLoading(true);
-    axios
-      .get(`https://api.shrtco.de/v2/shorten?url=${link}`)
-      .then((response) => {
-        const { short_link3 } = response.data.result;
-        console.log(response.data);
-        setShortenLinks([
-          { longLink: link, shortLink: short_link3, isCopied: false },
-          ...shortenLinks,
-        ]);
-        setLink("");
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        setErrors([{ message: "Invalid link" }]);
-        setIsLoading(false);
-      });
-  };
 
-  useEffect(() => {
-    if (shortenLinks.length > 3) setShortenLinks(shortenLinks.slice(0, 3));
-  }, [shortenLinks]);
-
-  const handleCopy = (id) => {
-    const el = document.createElement("textarea");
-    el.value = shortenLinks[id].shortLink;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand("copy");
-    document.body.removeChild(el);
-    setShortenLinks(
-      shortenLinks.map((link, index) => {
-        if (id === index) return { ...link, isCopied: true };
-        return { ...link };
-      })
-    );
-  };
+export default function ShortenForm({
+  link,
+  handleCopy,
+  handleSubmit,
+  shortenLinks,
+  errors,
+  isLoading,
+  setLink,
+}) {
   return (
     <section className="shorten">
       <form
@@ -71,7 +32,7 @@ export default function ShortenForm() {
             {isLoading ? <Loader /> : "Shorten It!"}
           </button>
         </div>
-        <p className="error">{errors[0]?.message}</p>
+        <p className="errorText">{errors[0]?.message}</p>
       </form>
       {shortenLinks.map((item, id) => (
         <div className="shortenLink_result" key={id}>

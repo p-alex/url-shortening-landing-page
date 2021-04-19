@@ -14,14 +14,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--DarkViolet);
-    .error {
-      position: absolute;
-      bottom: 12px;
-      color: red;
-    }
-    @media (max-width: 1200px) {
-      flex-direction: column;
-    }
     input {
       position: relative;
       padding: 15px 25px;
@@ -59,8 +51,19 @@
         width: 100%;
       }
     }
+    button:hover {
+      opacity: 0.8;
+    }
     .inputError {
       border: solid red 3px;
+    }
+    .errorText {
+      position: absolute;
+      bottom: 12px;
+      color: red;
+    }
+    @media (max-width: 1200px) {
+      flex-direction: column;
     }
   }
   &_formContainer {
@@ -99,6 +102,9 @@
     @media (max-width: 1200px) {
       width: 100%;
     }
+  }
+  button:hover {
+    opacity: 0.8;
   }
   .copied {
     background: var(--DarkViolet);
