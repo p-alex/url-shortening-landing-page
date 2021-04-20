@@ -21,12 +21,14 @@
   &_linkContainer {
     position: relative;
     display: flex;
+
     li a {
       display: block;
       padding: 10px 20px;
       color: var(--Gray);
       text-decoration: none;
       font-weight: 600;
+      transition: color 300ms ease-in-out;
       &:hover {
         color: #222;
       }
@@ -34,14 +36,15 @@
     .special {
       background: var(--Cyan);
       color: white;
-      border-radius: 25px;
+      border-radius: 35px;
       margin-left: 20px;
+      transition: background 300ms ease-in-out;
       a {
         color: white;
         text-decoration: none;
       }
       &:hover {
-        opacity: 0.8;
+        background: var(--LightCyan);
       }
       &:hover a {
         color: white;

@@ -34,10 +34,10 @@ export default function ShortenForm({
         </div>
         <p className="errorText">{errors[0]?.message}</p>
       </form>
-      {shortenLinks.map((item, id) => (
+      {JSON.parse(localStorage.getItem("shortenLinks")).map((item, id) => (
         <div className="shortenLink_result" key={id}>
           <span>
-            {item.longLink.length > 70
+            {item.longLink?.length > 70
               ? item.longLink.slice(0, 71) + `...`
               : item.longLink}
           </span>

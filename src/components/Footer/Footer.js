@@ -63,6 +63,25 @@ export default function Footer() {
           </a>
         </div>
       </div>
+      <span className="footer_credit">
+        Challenge by{" "}
+        <a
+          href="https://www.frontendmentor.io/solutions"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Frontend Mentor
+        </a>
+        . Coded by{" "}
+        <a
+          href="https://www.frontendmentor.io/profile/p-alex"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Alex Daniel
+        </a>
+        .
+      </span>
     </footer>
   );
 }

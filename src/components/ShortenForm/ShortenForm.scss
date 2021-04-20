@@ -1,11 +1,13 @@
 .shorten {
   position: relative;
   width: 100%;
-  top: -140px;
+  top: -100px;
+  @media (max-width: 1200px) {
+    top: -80px;
+  }
   &_form {
     position: relative;
     width: 100%;
-    padding: 50px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -17,7 +19,7 @@
     input {
       position: relative;
       padding: 15px 25px;
-      width: 82%;
+      width: 79%;
       outline: none;
       border: none;
       border-radius: 10px;
@@ -43,16 +45,17 @@
       outline: none;
       cursor: pointer;
       font-size: 18px;
-      width: 15%;
+      width: 18%;
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: background 300ms ease-in-out;
       @media (max-width: 1200px) {
         width: 100%;
       }
     }
     button:hover {
-      opacity: 0.8;
+      background: var(--LightCyan);
     }
     .inputError {
       border: solid red 3px;
@@ -61,17 +64,25 @@
       position: absolute;
       bottom: 12px;
       color: red;
+      padding: 0 50px;
+      @media (max-width: 1200px) {
+        position: relative;
+        padding: 0 25px;
+      }
     }
     @media (max-width: 1200px) {
       flex-direction: column;
+      paddding: 10px;
     }
   }
   &_formContainer {
     display: flex;
     width: 100%;
+    padding: 50px;
     justify-content: space-between;
     @media (max-width: 1200px) {
       flex-direction: column;
+      padding: 25px;
     }
   }
 }

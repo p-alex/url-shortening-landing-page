@@ -3,10 +3,16 @@ import axios from "axios";
 import ShortenForm from "../../components/ShortenForm/ShortenForm";
 export default function ShortenFormContainer() {
   const [link, setLink] = useState("");
-  const [shortenLinks, setShortenLinks] = useState([]);
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [copied, setCopied] = useState(false);
+  useEffect(() => {
+    let storageArray = JSON.parse(localStorage.getItem("shortenLinks"));
+    storageArray.map((item) => {
+      item.isCopied = false;
+    });
+    localStorage.setItem("shortenLinks", JSON.stringify(storageArray));
+  });
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!link) return setErrors([{ message: "Please add a link" }]);
@@ -16,11 +22,13 @@ export default function ShortenFormContainer() {
       .get(`https://api.shrtco.de/v2/shorten?url=${link}`)
       .then((response) => {
         const { short_link3 } = response.data.result;
-        console.log(response.data);
-        setShortenLinks([
-          { longLink: link, shortLink: short_link3, isCopied: false },
-          ...shortenLinks,
-        ]);
+        let storageArray = JSON.parse(localStorage.getItem("shortenLinks"));
+        storageArray.push({
+          longLink: link,
+          shortLink: short_link3,
+          isCopied: false,
+        });
+        localStorage.setItem("shortenLinks", JSON.stringify(storageArray));
         setLink("");
         setIsLoading(false);
       })
@@ -31,33 +39,37 @@ export default function ShortenFormContainer() {
   };
 
   const handleCopy = (id) => {
+    console.log(id);
     const el = document.createElement("textarea");
-    el.value = shortenLinks[id].shortLink;
+    el.value = JSON.parse(localStorage.getItem("shortenLinks"))[id]?.shortLink;
     document.body.appendChild(el);
     el.select();
     document.execCommand("copy");
     document.body.removeChild(el);
-    setShortenLinks(
-      shortenLinks.map((link, index) => {
-        if (id === index) return { ...link, isCopied: true };
-        return { ...link };
-      })
-    );
+    let storageArray = JSON.parse(localStorage.getItem("shortenLinks"));
+    storageArray.map((item) => {
+      item.isCopied = false;
+    });
+    storageArray.map((item, index) => {
+      if (index === id) {
+        item.isCopied = true;
+      }
+    });
+    localStorage.setItem("shortenLinks", JSON.stringify(storageArray));
+    setCopied(!copied);
   };
-
-  useEffect(() => {
-    if (shortenLinks.length > 6) setShortenLinks(shortenLinks.slice(0, 6));
-  }, [shortenLinks]);
-
+  // useEffect(() => {
+  //   if (shortenLinks.length > 6) setShortenLinks(shortenLinks.slice(0, 6));
+  // }, [shortenLinks]);
   return (
     <ShortenForm
       link={link}
       setLink={setLink}
       handleCopy={handleCopy}
       handleSubmit={handleSubmit}
-      shortenLinks={shortenLinks}
       errors={errors}
       isLoading={isLoading}
+      copied={copied}
     />
   );
 }

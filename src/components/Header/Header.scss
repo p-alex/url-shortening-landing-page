@@ -22,12 +22,14 @@
         color: white;
         text-decoration: none;
         margin-top: 40px;
-        border-radius: 25px;
-        padding: 10px 25px;
+        border-radius: 35px;
+        padding: 15px 40px;
         font-weight: 700;
+        font-size: 18px;
+        transition: background 300ms ease-in-out;
       }
       a:hover {
-        opacity: 0.8;
+        background: var(--LightCyan);
       }
     }
     .header_image {
