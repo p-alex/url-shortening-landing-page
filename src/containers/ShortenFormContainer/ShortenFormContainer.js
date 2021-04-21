@@ -5,11 +5,12 @@ export default function ShortenFormContainer() {
   const [link, setLink] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [copied, setCopied] = useState(false);
+  const [toggleComponentReload, setToggleComponentReload] = useState(false);
   useEffect(() => {
     let storageArray = JSON.parse(localStorage.getItem("shortenLinks"));
     storageArray.map((item) => {
       item.isCopied = false;
+      return null;
     });
     localStorage.setItem("shortenLinks", JSON.stringify(storageArray));
   });
@@ -39,7 +40,6 @@ export default function ShortenFormContainer() {
   };
 
   const handleCopy = (id) => {
-    console.log(id);
     const el = document.createElement("textarea");
     el.value = JSON.parse(localStorage.getItem("shortenLinks"))[id]?.shortLink;
     document.body.appendChild(el);
@@ -49,27 +49,35 @@ export default function ShortenFormContainer() {
     let storageArray = JSON.parse(localStorage.getItem("shortenLinks"));
     storageArray.map((item) => {
       item.isCopied = false;
+      return null;
     });
     storageArray.map((item, index) => {
       if (index === id) {
         item.isCopied = true;
       }
+      return null;
     });
     localStorage.setItem("shortenLinks", JSON.stringify(storageArray));
-    setCopied(!copied);
+    setToggleComponentReload(!toggleComponentReload);
   };
-  // useEffect(() => {
-  //   if (shortenLinks.length > 6) setShortenLinks(shortenLinks.slice(0, 6));
-  // }, [shortenLinks]);
+
+  const handleDelete = (shortLink) => {
+    let storageArray = JSON.parse(localStorage.getItem("shortenLinks"));
+    storageArray = storageArray.filter((item) => item.shortLink !== shortLink);
+    localStorage.setItem("shortenLinks", JSON.stringify(storageArray));
+    setToggleComponentReload(!toggleComponentReload);
+  };
+
   return (
     <ShortenForm
       link={link}
       setLink={setLink}
       handleCopy={handleCopy}
       handleSubmit={handleSubmit}
+      handleDelete={handleDelete}
       errors={errors}
       isLoading={isLoading}
-      copied={copied}
+      toggleComponentReload={toggleComponentReload}
     />
   );
 }

@@ -6,7 +6,7 @@ export default function ShortenForm({
   link,
   handleCopy,
   handleSubmit,
-  shortenLinks,
+  handleDelete,
   errors,
   isLoading,
   setLink,
@@ -32,15 +32,11 @@ export default function ShortenForm({
             {isLoading ? <Loader /> : "Shorten It!"}
           </button>
         </div>
-        <p className="errorText">{errors[0]?.message}</p>
+        {errors[0]?.message && <p className="errorText">{errors[0].message}</p>}
       </form>
       {JSON.parse(localStorage.getItem("shortenLinks")).map((item, id) => (
         <div className="shortenLink_result" key={id}>
-          <span>
-            {item.longLink?.length > 70
-              ? item.longLink.slice(0, 71) + `...`
-              : item.longLink}
-          </span>
+          <span>{item.longLink}</span>
           <p>{item.shortLink}</p>
           <button
             type="button"
@@ -49,6 +45,10 @@ export default function ShortenForm({
           >
             {item.isCopied ? "Copied!" : "Copy!"}
           </button>
+          <i
+            className="fas fa-times"
+            onClick={() => handleDelete(item.shortLink)}
+          ></i>
         </div>
       ))}
     </section>

@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import MobileNavBar from "./components/MobileNavBar/MobileNavBar";
 import Header from "./components/Header/Header";
