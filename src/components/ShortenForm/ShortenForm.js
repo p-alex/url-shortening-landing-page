@@ -34,23 +34,27 @@ export default function ShortenForm({
         </div>
         {errors[0]?.message && <p className="errorText">{errors[0].message}</p>}
       </form>
-      {JSON.parse(localStorage.getItem("shortenLinks")).map((item, id) => (
-        <div className="shortenLink_result" key={id}>
-          <span>{item.longLink}</span>
-          <p>{item.shortLink}</p>
-          <button
-            type="button"
-            className={item.isCopied ? "copied" : ""}
-            onClick={() => handleCopy(id)}
-          >
-            {item.isCopied ? "Copied!" : "Copy!"}
-          </button>
-          <i
-            className="fas fa-times"
-            onClick={() => handleDelete(item.shortLink)}
-          ></i>
-        </div>
-      ))}
+      <div className="shortenLinks_container">
+        {JSON.parse(localStorage.getItem("shortenLinks")).map((item, id) => (
+          <div className="shortenLink_result" key={id}>
+            <span title={item.longLink}>{item.longLink}</span>
+            <p>{item.shortLink}</p>
+            <button
+              type="button"
+              className={item.isCopied ? "copied" : ""}
+              onClick={() => handleCopy(id)}
+            >
+              {item.isCopied ? "Copied!" : "Copy!"}
+            </button>
+            <button
+              className="deleteBtn"
+              onClick={() => handleDelete(item.shortLink)}
+            >
+              Delete
+            </button>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

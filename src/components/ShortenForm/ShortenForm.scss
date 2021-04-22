@@ -1,7 +1,7 @@
 .shorten {
   position: relative;
   width: 100%;
-  top: -100px;
+  top: -140px;
   @media (max-width: 1200px) {
     top: -80px;
   }
@@ -23,7 +23,7 @@
       outline: none;
       border: none;
       border-radius: 10px;
-      font-size: 18px;
+      font-size: 21px;
       border: solid transparent 3px;
       transition: border 300ms ease-in-out;
       &:focus {
@@ -70,12 +70,13 @@
       animation-duration: 300ms;
       @media (max-width: 1200px) {
         position: relative;
-        padding: 0 25px;
+        padding: 0 15px;
+        padding-top: 15px;
       }
     }
     @media (max-width: 1200px) {
       flex-direction: column;
-      padding: 10px;
+      padding: 15px;
     }
   }
   &_formContainer {
@@ -85,9 +86,13 @@
     justify-content: space-between;
     @media (max-width: 1200px) {
       flex-direction: column;
-      padding: 25px;
+      padding: 15px;
     }
   }
+}
+.shortenLinks_container {
+  display: flex;
+  flex-direction: column-reverse;
 }
 .shortenLink_result {
   position: relative;
@@ -107,13 +112,13 @@
     color: white;
     text-decoration: none;
     border-radius: 10px;
-    padding: 10px 25px;
+    padding: 10px 0;
     font-weight: 700;
     border: none;
     outline: none;
     cursor: pointer;
     font-size: 18px;
-    margin-left: 10px;
+    width: 120px;
     @media (max-width: 1200px) {
       width: 100%;
     }
@@ -121,20 +126,18 @@
   button:hover {
     opacity: 0.8;
   }
-  i {
-    cursor: pointer;
-    padding: 10px;
-    color: var(--Red);
-    @media (max-width: 1200px) {
-      margin-top: 20px;
-    }
-  }
+
   .copied {
     background: var(--DarkViolet);
   }
 
   span {
     width: 65%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #444;
+    font-weight: 700;
     @media (max-width: 1200px) {
       width: 100%;
     }
@@ -146,20 +149,31 @@
       padding-bottom: 15px;
       margin-bottom: 15px;
       width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
   }
   p {
     position: relative;
     color: var(--Cyan);
-    width: 200px;
     text-align: right;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 25px;
     @media (max-width: 1200px) {
       text-align: left;
       width: 100%;
       margin-bottom: 15px;
+    }
+  }
+  .deleteBtn {
+    position: relative;
+    cursor: pointer;
+    color: var(--Red);
+    margin-left: 25px;
+    width: auto;
+    background: transparent;
+    @media (max-width: 1200px) {
+      margin-top: 10px;
+      margin-left: 0;
     }
   }
 }
