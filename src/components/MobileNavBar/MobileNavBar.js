@@ -5,10 +5,7 @@ export default function MobileNavBar() {
   return (
     <nav className="navMobile">
       <img src="/images/logo.svg" alt="logo" />
-      <i
-        className={isActive ? "fas fa-times" : "fas fa-bars"}
-        onClick={() => setIsActive(!isActive)}
-      ></i>
+      <i className="fas fa-bars" onClick={() => setIsActive(!isActive)}></i>
 
       {isActive && (
         <div className="navMobile_dropdown">

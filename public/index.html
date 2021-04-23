@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="/images/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -24,32 +24,28 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-      crossorigin="anonymous"
-    />
+
     <title>URL shortening API landing page</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
       :root {
         /* ### Primary */
         --Cyan: hsl(180, 66%, 49%);
         --LightCyan: hsl(180, 81%, 55%);
         --DarkViolet: hsl(257, 27%, 26%);
         /* ### Secondary */
-        --Red: hsl(0, 87%, 67%);
+        --LightRed: hsl(0, 95%, 76%);
+        --Red: hsl(0, 91%, 65%);
         /* ### Neutral */
         --LightGray: hsl(0, 0%, 94%);
-        --Gray: rgb(148, 148, 148);
-        --DarkGray: hsl(0, 0%, 30%);
+        --Gray: rgb(128, 128, 128);
+        --DarkGray: hsl(0, 0%, 16%);
         --GrayishViolet: hsl(260, 27%, 94%);
         --VeryDarkBlue: hsl(255, 11%, 22%);
         --VeryDarkViolet: hsl(260, 8%, 14%);
 
         --desktop-regular-fhd: 1150px;
       }
-
       * {
         margin: 0;
         padding: 0;
@@ -65,29 +61,24 @@
       h1 {
         font-size: 5rem;
         line-height: 90px;
-        color: #444;
+        color: var(--DarkGray);
         letter-spacing: -3px;
-      }
-      a {
-        letter-spacing: 0.5px;
       }
       h2 {
         font-size: 2.5rem;
-        color: #444;
+        color: var(--DarkGray);
         letter-spacing: -1px;
       }
       h3 {
         font-size: 1.5rem;
-        color: #444;
+        color: var(--DarkGray);
       }
       p {
         color: var(--Gray);
         font-weight: 500;
-        letter-spacing: 0.5px;
         line-height: 30px;
         font-size: 21px;
       }
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
 
       @keyframes opacity {
         from {
@@ -98,6 +89,12 @@
         }
       }
     </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

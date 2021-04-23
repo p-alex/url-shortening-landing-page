@@ -84,6 +84,9 @@
     width: 100%;
     padding: 50px;
     justify-content: space-between;
+    label {
+      width: auto;
+    }
     @media (max-width: 1200px) {
       flex-direction: column;
       padding: 15px;
@@ -119,18 +122,17 @@
     cursor: pointer;
     font-size: 18px;
     width: 120px;
+    transition: opacity 300ms ease-in-out;
     @media (max-width: 1200px) {
       width: 100%;
     }
   }
   button:hover {
-    opacity: 0.8;
+    opacity: 0.85;
   }
-
   .copied {
     background: var(--DarkViolet);
   }
-
   span {
     width: 65%;
     white-space: nowrap;
@@ -171,9 +173,16 @@
     margin-left: 25px;
     width: auto;
     background: transparent;
+    transition: color 300ms ease-in-out;
+    margin-right: 5px;
+    &:hover {
+      color: var(--LightRed);
+      background: transparent;
+    }
     @media (max-width: 1200px) {
       margin-top: 10px;
       margin-left: 0;
+      margin-right: 0px;
     }
   }
 }

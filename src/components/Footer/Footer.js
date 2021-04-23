@@ -9,7 +9,7 @@ export default function Footer() {
         </div>
         <div className="footer_links">
           <ul>
-            <span>Features</span>
+            <li>Features</li>
             <li>
               <a href="/">Link Shortening</a>
             </li>
@@ -21,7 +21,7 @@ export default function Footer() {
             </li>
           </ul>
           <ul>
-            <span>Resources</span>
+            <li>Resources</li>
             <li>
               <a href="/">Blog</a>
             </li>
@@ -33,7 +33,7 @@ export default function Footer() {
             </li>
           </ul>
           <ul>
-            <span>Company</span>
+            <li>Company</li>
             <li>
               <a href="/">About</a>
             </li>

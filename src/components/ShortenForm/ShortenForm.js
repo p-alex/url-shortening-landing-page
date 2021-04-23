@@ -12,7 +12,7 @@ export default function ShortenForm({
   setLink,
 }) {
   return (
-    <section className="shorten">
+    <div className="shorten">
       <form
         className="shorten_form"
         onSubmit={!isLoading ? handleSubmit : (e) => e.preventDefault()}
@@ -24,10 +24,13 @@ export default function ShortenForm({
             placeholder="Shorten a link here..."
             name="shorten"
             id="shorten"
+            name="link"
+            title=""
             value={link}
             onChange={(e) => setLink(e.target.value)}
             className={errors.length > 0 ? "inputError" : ""}
           />
+
           <button type="submit">
             {isLoading ? <Loader /> : "Shorten It!"}
           </button>
@@ -55,6 +58,6 @@ export default function ShortenForm({
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
