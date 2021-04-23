@@ -25,7 +25,7 @@ export default function ShortenForm({
             name="shorten"
             id="shorten"
             name="link"
-            title=""
+            aria-label="url"
             value={link}
             onChange={(e) => setLink(e.target.value)}
             className={errors.length > 0 ? "inputError" : ""}
