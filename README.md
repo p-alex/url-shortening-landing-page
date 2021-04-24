@@ -1,3 +1,3 @@
 # URL shortening landing page created with React
 
-## URL:https://loving-goldstine-dfa83f.netlify.app/
+## URL:https://inspiring-turing-cc0f0f.netlify.app
