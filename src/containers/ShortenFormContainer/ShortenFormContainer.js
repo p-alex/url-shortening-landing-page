@@ -22,11 +22,11 @@ export default function ShortenFormContainer() {
     axios
       .get(`https://api.shrtco.de/v2/shorten?url=${link}`)
       .then((response) => {
-        const { short_link3 } = response.data.result;
+        const { short_link } = response.data.result;
         let storageArray = JSON.parse(localStorage.getItem("shortenLinks"));
         storageArray.push({
           longLink: link,
-          shortLink: short_link3,
+          shortLink: short_link,
           isCopied: false,
         });
         localStorage.setItem("shortenLinks", JSON.stringify(storageArray));
